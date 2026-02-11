@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Link Saver</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Job Link Saver</h1>
+    
+    <div id="status" class="status"></div>
+    
+    <div class="main-section">
+      <button id="saveBtn" class="btn btn-primary btn-large">Save to Google Sheet</button>
+      
+      <div class="section">
+        <label for="companyOptional">Company (optional)</label>
+        <input type="text" id="companyOptional" placeholder="e.g. Google">
+      </div>
+    </div>
+
+    <div class="advanced-section">
+      <button id="advancedToggle" class="btn btn-link">
+        <span id="advancedToggleText">⚙️ Advanced Settings</span>
+        <span id="advancedToggleIcon">▼</span>
+      </button>
+      
+      <div id="advancedContent" class="advanced-content" style="display: none;">
+        <div class="section">
+          <label for="webAppUrl">Web App URL <span class="required">*</span></label>
+          <input type="text" id="webAppUrl" placeholder="https://script.google.com/macros/s/.../exec" required>
+          <small>Get this from whoever set up the shared sheet.</small>
+        </div>
+        
+        <div class="section">
+          <label for="authorName">Your name (Author) <span class="required">*</span></label>
+          <input type="text" id="authorName" placeholder="e.g. Alex" required>
+        </div>
+        
+        <div class="section">
+          <label for="sheetName">Sheet tab name</label>
+          <input type="text" id="sheetName" placeholder="Sheet1" value="Sheet1">
+        </div>
+        
+        <div class="section">
+          <label for="secret">Secret (optional)</label>
+          <input type="text" id="secret" placeholder="Only if the sheet owner gave you one" autocomplete="off">
+          <small>Leave empty unless your group uses a shared secret.</small>
+        </div>
+        
+        <button id="saveSettingsBtn" class="btn btn-secondary">Save settings</button>
+      </div>
+    </div>
+
+    <div id="currentUrl" class="current-url"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
